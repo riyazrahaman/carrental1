@@ -183,97 +183,159 @@ export default function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="relative h-[742px] overflow-hidden">
-        {/* Black background that covers part of the hero */}
-        <div className="absolute top-0 left-0 w-full lg:w-[613px] h-full bg-carent-dark z-10"></div>
+      <section
+        id="hero"
+        className="relative min-h-screen lg:h-[742px] overflow-hidden"
+      >
+        {/* Desktop Layout */}
+        <div className="hidden lg:block">
+          {/* Black background that covers part of the hero */}
+          <div className="absolute top-0 left-0 w-full xl:w-[43%] 2xl:w-[613px] h-full bg-carent-dark z-10"></div>
 
-        {/* Main car image positioned to the right */}
-        <div className="absolute top-0 right-0 w-full lg:w-[909px] h-[545px] lg:top-[104px] z-20">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/60ae11437062dd40b1430c2ccd639fc14fb3ecae?width=1818"
-            alt="Luxury car"
-            className="w-full h-full object-cover"
-          />
-        </div>
+          {/* Main car image positioned to the right */}
+          <div className="absolute top-0 right-0 w-full xl:w-[63%] 2xl:w-[909px] h-[70%] xl:h-[545px] xl:top-[104px] z-20">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/60ae11437062dd40b1430c2ccd639fc14fb3ecae?width=1818"
+              alt="Luxury car"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
 
-        {/* Social Menu - Vertical */}
-        <div className="hidden lg:flex flex-col items-center absolute left-[72px] top-[253px] space-y-4 z-30">
-          <div className="w-px h-[38px] bg-carent-orange"></div>
-          <div className="flex flex-col space-y-3">
-            <div className="w-4 h-4 text-carent-orange cursor-pointer">
-              <svg viewBox="0 0 16 16" fill="currentColor">
-                <path d="M10.6338 0C12.5316 2.48539e-09 13.4807 -0.000146601 14.2031 0.375C14.8119 0.691252 15.3087 1.18806 15.625 1.79688C16.0001 2.51925 16 3.4684 16 5.36621V10.6338C16 12.5316 16.0001 13.4807 15.625 14.2031C15.3087 14.8119 14.8119 15.3087 14.2031 15.625C13.4807 16.0001 12.5316 16 10.6338 16H9.33398V10.2227H11.1113L11.4668 8H9.33398V6.44434C9.334 5.82225 9.55586 5.33316 10.5332 5.33301H11.5557V3.28906C10.978 3.20019 10.356 3.11135 9.77832 3.11133C7.9561 3.11133 6.66699 4.22266 6.66699 6.22266V8H4.66699V10.2227H6.66699V16H5.36621C3.4684 16 2.51925 16.0001 1.79688 15.625C1.18806 15.3087 0.691252 14.8119 0.375 14.2031C-0.000146601 13.4807 2.48539e-09 12.5316 0 10.6338V5.36621C2.49042e-09 3.4684 -0.000146895 2.51925 0.375 1.79688C0.691252 1.18806 1.18806 0.691252 1.79688 0.375C2.51925 -0.000146895 3.4684 2.49042e-09 5.36621 0H10.6338Z" />
-              </svg>
+          {/* Social Menu - Vertical */}
+          <div className="flex flex-col items-center absolute left-[3%] xl:left-[72px] top-1/3 space-y-4 z-30">
+            <div className="w-px h-[38px] bg-carent-orange"></div>
+            <div className="flex flex-col space-y-3">
+              <div className="w-4 h-4 text-carent-orange cursor-pointer">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M10.6338 0C12.5316 2.48539e-09 13.4807 -0.000146601 14.2031 0.375C14.8119 0.691252 15.3087 1.18806 15.625 1.79688C16.0001 2.51925 16 3.4684 16 5.36621V10.6338C16 12.5316 16.0001 13.4807 15.625 14.2031C15.3087 14.8119 14.8119 15.3087 14.2031 15.625C13.4807 16.0001 12.5316 16 10.6338 16H9.33398V10.2227H11.1113L11.4668 8H9.33398V6.44434C9.334 5.82225 9.55586 5.33316 10.5332 5.33301H11.5557V3.28906C10.978 3.20019 10.356 3.11135 9.77832 3.11133C7.9561 3.11133 6.66699 4.22266 6.66699 6.22266V8H4.66699V10.2227H6.66699V16H5.36621C3.4684 16 2.51925 16.0001 1.79688 15.625C1.18806 15.3087 0.691252 14.8119 0.375 14.2031C-0.000146601 13.4807 2.48539e-09 12.5316 0 10.6338V5.36621C2.49042e-09 3.4684 -0.000146895 2.51925 0.375 1.79688C0.691252 1.18806 1.18806 0.691252 1.79688 0.375C2.51925 -0.000146895 3.4684 2.49042e-09 5.36621 0H10.6338Z" />
+                </svg>
+              </div>
+              <div className="w-4 h-4 text-carent-orange cursor-pointer">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path
+                    d="M7.99902 2.18164C6.4203 2.18164 6.22169 2.18858 5.60156 2.2168C4.98237 2.24515 4.5593 2.34349 4.18945 2.4873C3.8068 2.63591 3.48159 2.83469 3.1582 3.1582C2.83475 3.48145 2.63636 3.80614 2.4873 4.18848C2.34309 4.55847 2.2447 4.98162 2.2168 5.60059C2.18904 6.22118 2.18164 6.41994 2.18164 8C2.18164 9.58008 2.18868 9.77787 2.2168 10.3984C2.24528 11.0178 2.34355 11.4406 2.4873 11.8105C2.636 12.1931 2.83481 12.5175 3.1582 12.8408C3.48147 13.1645 3.80606 13.3641 4.18848 13.5127C4.55861 13.6566 4.98142 13.7548 5.60059 13.7832C6.22112 13.8114 6.41942 13.8184 7.99902 13.8184C9.57886 13.8184 9.7772 13.8114 10.3975 13.7832C11.0168 13.7548 11.4404 13.6566 11.8105 13.5127C12.1931 13.3641 12.5176 13.1645 12.8408 12.8408C13.1642 12.5175 13.3627 12.193 13.5117 11.8105C13.6547 11.4405 13.7531 11.0176 13.7822 10.3984C13.8101 9.77796 13.8174 9.57998 13.8174 8C13.8174 6.41994 13.8101 6.22118 13.7822 5.60059C13.7531 4.98144 13.6547 4.55833 13.5117 4.18848C13.3627 3.80607 13.1643 3.48142 12.8408 3.1582C12.5172 2.83462 12.1935 2.63578 11.8105 2.4873C11.4397 2.34346 11.0166 2.24519 10.3975 2.2168C9.77697 2.18856 9.57893 2.18164 7.99902 2.18164Z"
+                    fill="url(#paint0_radial_1_122)"
+                  />
+                </svg>
+              </div>
+              <div className="w-4 h-4 text-carent-orange cursor-pointer">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path
+                    d="M10.3203 3.78906C9.14981 3.78911 8.20117 4.81569 8.20117 6.08301C8.2012 6.25988 8.21977 6.43668 8.25586 6.60449C6.49489 6.5091 4.93248 5.59605 3.8877 4.20605C3.70423 4.54674 3.60059 4.94244 3.60059 5.36035C3.60061 6.15521 3.97468 6.8591 4.54395 7.27246C4.1964 7.25883 3.86896 7.1544 3.58301 6.98633V7.01367C3.58301 8.12658 4.3139 9.05374 5.28418 9.2627C5.10508 9.31717 4.91803 9.34375 4.72559 9.34375C4.58912 9.34374 4.45575 9.32998 4.32617 9.30273C4.5962 10.2112 5.37943 10.879 6.30664 10.8926C5.58141 11.5104 4.6665 11.8789 3.67383 11.8789C3.50294 11.8789 3.33467 11.8648 3.16895 11.8467C4.10684 12.4962 5.21988 12.8779 6.41699 12.8779C10.3144 12.8779 12.4462 9.38039 12.4463 6.35059C12.4463 6.25067 12.4453 6.1507 12.4414 6.05078C12.8552 5.7283 13.2134 5.32393 13.498 4.86523C13.1186 5.04693 12.7092 5.16912 12.2803 5.22363C12.7185 4.94206 13.0539 4.49284 13.2129 3.95703C12.803 4.22039 12.3497 4.41083 11.8662 4.51074C11.4799 4.0657 10.9296 3.78906 10.3203 3.78906Z"
+                    fill="#FE8400"
+                  />
+                </svg>
+              </div>
+              <div className="w-4 h-4 text-carent-orange cursor-pointer">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path
+                    d="M8.17969 2.19043C5.04099 2.19056 2.48661 4.74371 2.48535 7.88184C2.48494 8.88503 2.74678 9.86437 3.24512 10.7275L2.4375 13.6768L5.45605 12.8857C6.28782 13.3392 7.22464 13.5778 8.17773 13.5781H8.17969C11.318 13.5781 13.8735 11.0248 13.875 7.88672C13.8756 6.36593 13.2832 4.93519 12.208 3.85938C11.2002 2.85103 9.88078 2.26696 8.46484 2.19727L8.17969 2.19043Z"
+                    fill="#FE8400"
+                  />
+                </svg>
+              </div>
+              <div className="w-4 h-4 text-carent-orange cursor-pointer">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path
+                    d="M12.9131 4.52148C13.081 3.8482 12.6567 3.54259 12.2168 3.74219L2.58398 7.45703C1.92662 7.72078 1.93037 8.08743 2.46387 8.25098L4.86621 9.00098L5.78613 11.8193C5.89783 12.1277 5.84237 12.2499 6.16602 12.25C6.41597 12.25 6.5268 12.136 6.66602 12C6.75454 11.9134 7.28033 11.4026 7.86719 10.832L10.3662 12.6787C10.8261 12.9324 11.158 12.8003 11.2725 12.251L12.9131 4.52148Z"
+                    fill="#FE8400"
+                  />
+                </svg>
+              </div>
             </div>
-            <div className="w-4 h-4 text-carent-orange cursor-pointer">
-              <svg viewBox="0 0 16 16" fill="currentColor">
-                <path
-                  d="M7.99902 2.18164C6.4203 2.18164 6.22169 2.18858 5.60156 2.2168C4.98237 2.24515 4.5593 2.34349 4.18945 2.4873C3.8068 2.63591 3.48159 2.83469 3.1582 3.1582C2.83475 3.48145 2.63636 3.80614 2.4873 4.18848C2.34309 4.55847 2.2447 4.98162 2.2168 5.60059C2.18904 6.22118 2.18164 6.41994 2.18164 8C2.18164 9.58008 2.18868 9.77787 2.2168 10.3984C2.24528 11.0178 2.34355 11.4406 2.4873 11.8105C2.636 12.1931 2.83481 12.5175 3.1582 12.8408C3.48147 13.1645 3.80606 13.3641 4.18848 13.5127C4.55861 13.6566 4.98142 13.7548 5.60059 13.7832C6.22112 13.8114 6.41942 13.8184 7.99902 13.8184C9.57886 13.8184 9.7772 13.8114 10.3975 13.7832C11.0168 13.7548 11.4404 13.6566 11.8105 13.5127C12.1931 13.3641 12.5176 13.1645 12.8408 12.8408C13.1642 12.5175 13.3627 12.193 13.5117 11.8105C13.6547 11.4405 13.7531 11.0176 13.7822 10.3984C13.8101 9.77796 13.8174 9.57998 13.8174 8C13.8174 6.41994 13.8101 6.22118 13.7822 5.60059C13.7531 4.98144 13.6547 4.55833 13.5117 4.18848C13.3627 3.80607 13.1643 3.48142 12.8408 3.1582C12.5172 2.83462 12.1935 2.63578 11.8105 2.4873C11.4397 2.34346 11.0166 2.24519 10.3975 2.2168C9.77697 2.18856 9.57893 2.18164 7.99902 2.18164Z"
-                  fill="url(#paint0_radial_1_122)"
-                />
-              </svg>
-            </div>
-            <div className="w-4 h-4 text-carent-orange cursor-pointer">
-              <svg viewBox="0 0 16 16" fill="currentColor">
-                <path
-                  d="M10.3203 3.78906C9.14981 3.78911 8.20117 4.81569 8.20117 6.08301C8.2012 6.25988 8.21977 6.43668 8.25586 6.60449C6.49489 6.5091 4.93248 5.59605 3.8877 4.20605C3.70423 4.54674 3.60059 4.94244 3.60059 5.36035C3.60061 6.15521 3.97468 6.8591 4.54395 7.27246C4.1964 7.25883 3.86896 7.1544 3.58301 6.98633V7.01367C3.58301 8.12658 4.3139 9.05374 5.28418 9.2627C5.10508 9.31717 4.91803 9.34375 4.72559 9.34375C4.58912 9.34374 4.45575 9.32998 4.32617 9.30273C4.5962 10.2112 5.37943 10.879 6.30664 10.8926C5.58141 11.5104 4.6665 11.8789 3.67383 11.8789C3.50294 11.8789 3.33467 11.8648 3.16895 11.8467C4.10684 12.4962 5.21988 12.8779 6.41699 12.8779C10.3144 12.8779 12.4462 9.38039 12.4463 6.35059C12.4463 6.25067 12.4453 6.1507 12.4414 6.05078C12.8552 5.7283 13.2134 5.32393 13.498 4.86523C13.1186 5.04693 12.7092 5.16912 12.2803 5.22363C12.7185 4.94206 13.0539 4.49284 13.2129 3.95703C12.803 4.22039 12.3497 4.41083 11.8662 4.51074C11.4799 4.0657 10.9296 3.78906 10.3203 3.78906Z"
-                  fill="#FE8400"
-                />
-              </svg>
-            </div>
-            <div className="w-4 h-4 text-carent-orange cursor-pointer">
-              <svg viewBox="0 0 16 16" fill="currentColor">
-                <path
-                  d="M8.17969 2.19043C5.04099 2.19056 2.48661 4.74371 2.48535 7.88184C2.48494 8.88503 2.74678 9.86437 3.24512 10.7275L2.4375 13.6768L5.45605 12.8857C6.28782 13.3392 7.22464 13.5778 8.17773 13.5781H8.17969C11.318 13.5781 13.8735 11.0248 13.875 7.88672C13.8756 6.36593 13.2832 4.93519 12.208 3.85938C11.2002 2.85103 9.88078 2.26696 8.46484 2.19727L8.17969 2.19043Z"
-                  fill="#FE8400"
-                />
-              </svg>
-            </div>
-            <div className="w-4 h-4 text-carent-orange cursor-pointer">
-              <svg viewBox="0 0 16 16" fill="currentColor">
-                <path
-                  d="M12.9131 4.52148C13.081 3.8482 12.6567 3.54259 12.2168 3.74219L2.58398 7.45703C1.92662 7.72078 1.93037 8.08743 2.46387 8.25098L4.86621 9.00098L5.78613 11.8193C5.89783 12.1277 5.84237 12.2499 6.16602 12.25C6.41597 12.25 6.5268 12.136 6.66602 12C6.75454 11.9134 7.28033 11.4026 7.86719 10.832L10.3662 12.6787C10.8261 12.9324 11.158 12.8003 11.2725 12.251L12.9131 4.52148Z"
-                  fill="#FE8400"
-                />
-              </svg>
+            <div className="w-px h-[38px] bg-carent-orange"></div>
+          </div>
+
+          {/* Hero Content - positioned over the black background */}
+          <div className="absolute left-[8%] xl:left-[160px] top-[20%] xl:top-[149px] w-[35%] xl:w-[528px] bg-black bg-opacity-15 p-6 xl:p-8 z-30">
+            <div className="flex flex-col gap-8 xl:gap-12">
+              <div className="flex flex-col gap-4">
+                <h1 className="text-white font-montserrat text-3xl xl:text-5xl font-bold leading-tight xl:leading-normal">
+                  Enjoy your life with our comfortable cars.
+                </h1>
+                <p className="text-white text-opacity-85 font-poppins text-lg xl:text-2xl leading-relaxed xl:leading-10">
+                  Puri Tours and Travels, is ready to serve the best experience
+                  in car rental.
+                </p>
+              </div>
+              <button className="bg-carent-orange text-carent-dark px-6 py-3 rounded font-poppins text-lg xl:text-2xl w-48 xl:w-64 flex justify-center items-center hover:opacity-90 transition-opacity">
+                Explore Now
+              </button>
             </div>
           </div>
-          <div className="w-px h-[38px] bg-carent-orange"></div>
         </div>
 
-        {/* Hero Content - positioned over the black background */}
-        <div className="absolute left-[160px] top-[149px] w-[528px] h-[485px] bg-black bg-opacity-15 p-8 z-30 hidden lg:block">
-          <div className="flex flex-col gap-12">
-            <div className="flex flex-col gap-4">
-              <h1 className="text-white font-montserrat text-5xl font-bold leading-normal">
-                Enjoy your life with our comfortable cars.
-              </h1>
-              <p className="text-white text-opacity-85 font-poppins text-2xl leading-10 w-[453px]">
-                Puri Tours and Travels, is ready to serve the best experience in
-                car rental.
-              </p>
-            </div>
-            <button className="bg-carent-orange text-carent-dark px-6 py-3 rounded font-poppins text-2xl w-64 flex justify-center items-center hover:opacity-90 transition-opacity">
-              Explore Now
-            </button>
+        {/* Mobile and Tablet Layout */}
+        <div className="lg:hidden relative min-h-screen flex flex-col">
+          {/* Mobile car image background */}
+          <div className="absolute inset-0 z-10">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/60ae11437062dd40b1430c2ccd639fc14fb3ecae?width=1818"
+              alt="Luxury car"
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-carent-dark bg-opacity-60"></div>
           </div>
-        </div>
 
-        {/* Mobile Hero Content */}
-        <div className="lg:hidden relative z-30 px-6 py-16 bg-carent-dark">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-white font-montserrat text-3xl font-bold leading-tight">
-                Enjoy your life with our comfortable cars.
-              </h1>
-              <p className="text-white text-opacity-85 font-poppins text-lg leading-relaxed">
-                Puri Tours and Travels, is ready to serve the best experience in
-                car rental.
-              </p>
+          {/* Mobile Hero Content */}
+          <div className="relative z-30 flex-1 flex items-center justify-center px-6 py-16">
+            <div className="text-center space-y-8 max-w-lg">
+              <div className="space-y-4">
+                <h1 className="text-white font-montserrat text-3xl md:text-4xl font-bold leading-tight">
+                  Enjoy your life with our comfortable cars.
+                </h1>
+                <p className="text-white text-opacity-85 font-poppins text-lg md:text-xl leading-relaxed">
+                  Puri Tours and Travels, is ready to serve the best experience
+                  in car rental.
+                </p>
+              </div>
+              <button className="bg-carent-orange text-carent-dark px-8 py-3 rounded font-poppins text-lg hover:opacity-90 transition-opacity">
+                Explore Now
+              </button>
             </div>
-            <button className="bg-carent-orange text-carent-dark px-6 py-3 rounded font-poppins text-lg hover:opacity-90 transition-opacity">
-              Explore Now
-            </button>
+          </div>
+
+          {/* Mobile Social Icons */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+            <div className="flex space-x-4">
+              <div className="w-5 h-5 text-carent-orange cursor-pointer">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M10.6338 0C12.5316 2.48539e-09 13.4807 -0.000146601 14.2031 0.375C14.8119 0.691252 15.3087 1.18806 15.625 1.79688C16.0001 2.51925 16 3.4684 16 5.36621V10.6338C16 12.5316 16.0001 13.4807 15.625 14.2031C15.3087 14.8119 14.8119 15.3087 14.2031 15.625C13.4807 16.0001 12.5316 16 10.6338 16H9.33398V10.2227H11.1113L11.4668 8H9.33398V6.44434C9.334 5.82225 9.55586 5.33316 10.5332 5.33301H11.5557V3.28906C10.978 3.20019 10.356 3.11135 9.77832 3.11133C7.9561 3.11133 6.66699 4.22266 6.66699 6.22266V8H4.66699V10.2227H6.66699V16H5.36621C3.4684 16 2.51925 16.0001 1.79688 15.625C1.18806 15.3087 0.691252 14.8119 0.375 14.2031C-0.000146601 13.4807 2.48539e-09 12.5316 0 10.6338V5.36621C2.49042e-09 3.4684 -0.000146895 2.51925 0.375 1.79688C0.691252 1.18806 1.18806 0.691252 1.79688 0.375C2.51925 -0.000146895 3.4684 2.49042e-09 5.36621 0H10.6338Z" />
+                </svg>
+              </div>
+              <div className="w-5 h-5 text-carent-orange cursor-pointer">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path
+                    d="M7.99902 2.18164C6.4203 2.18164 6.22169 2.18858 5.60156 2.2168C4.98237 2.24515 4.5593 2.34349 4.18945 2.4873C3.8068 2.63591 3.48159 2.83469 3.1582 3.1582C2.83475 3.48145 2.63636 3.80614 2.4873 4.18848C2.34309 4.55847 2.2447 4.98162 2.2168 5.60059C2.18904 6.22118 2.18164 6.41994 2.18164 8C2.18164 9.58008 2.18868 9.77787 2.2168 10.3984C2.24528 11.0178 2.34355 11.4406 2.4873 11.8105C2.636 12.1931 2.83481 12.5175 3.1582 12.8408C3.48147 13.1645 3.80606 13.3641 4.18848 13.5127C4.55861 13.6566 4.98142 13.7548 5.60059 13.7832C6.22112 13.8114 6.41942 13.8184 7.99902 13.8184C9.57886 13.8184 9.7772 13.8114 10.3975 13.7832C11.0168 13.7548 11.4404 13.6566 11.8105 13.5127C12.1931 13.3641 12.5176 13.1645 12.8408 12.8408C13.1642 12.5175 13.3627 12.193 13.5117 11.8105C13.6547 11.4405 13.7531 11.0176 13.7822 10.3984C13.8101 9.77796 13.8174 9.57998 13.8174 8C13.8174 6.41994 13.8101 6.22118 13.7822 5.60059C13.7531 4.98144 13.6547 4.55833 13.5117 4.18848C13.3627 3.80607 13.1643 3.48142 12.8408 3.1582C12.5172 2.83462 12.1935 2.63578 11.8105 2.4873C11.4397 2.34346 11.0166 2.24519 10.3975 2.2168C9.77697 2.18856 9.57893 2.18164 7.99902 2.18164Z"
+                    fill="#FE8400"
+                  />
+                </svg>
+              </div>
+              <div className="w-5 h-5 text-carent-orange cursor-pointer">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path
+                    d="M10.3203 3.78906C9.14981 3.78911 8.20117 4.81569 8.20117 6.08301C8.2012 6.25988 8.21977 6.43668 8.25586 6.60449C6.49489 6.5091 4.93248 5.59605 3.8877 4.20605C3.70423 4.54674 3.60059 4.94244 3.60059 5.36035C3.60061 6.15521 3.97468 6.8591 4.54395 7.27246C4.1964 7.25883 3.86896 7.1544 3.58301 6.98633V7.01367C3.58301 8.12658 4.3139 9.05374 5.28418 9.2627C5.10508 9.31717 4.91803 9.34375 4.72559 9.34375C4.58912 9.34374 4.45575 9.32998 4.32617 9.30273C4.5962 10.2112 5.37943 10.879 6.30664 10.8926C5.58141 11.5104 4.6665 11.8789 3.67383 11.8789C3.50294 11.8789 3.33467 11.8648 3.16895 11.8467C4.10684 12.4962 5.21988 12.8779 6.41699 12.8779C10.3144 12.8779 12.4462 9.38039 12.4463 6.35059C12.4463 6.25067 12.4453 6.1507 12.4414 6.05078C12.8552 5.7283 13.2134 5.32393 13.498 4.86523C13.1186 5.04693 12.7092 5.16912 12.2803 5.22363C12.7185 4.94206 13.0539 4.49284 13.2129 3.95703C12.803 4.22039 12.3497 4.41083 11.8662 4.51074C11.4799 4.0657 10.9296 3.78906 10.3203 3.78906Z"
+                    fill="#FE8400"
+                  />
+                </svg>
+              </div>
+              <div className="w-5 h-5 text-carent-orange cursor-pointer">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path
+                    d="M8.17969 2.19043C5.04099 2.19056 2.48661 4.74371 2.48535 7.88184C2.48494 8.88503 2.74678 9.86437 3.24512 10.7275L2.4375 13.6768L5.45605 12.8857C6.28782 13.3392 7.22464 13.5778 8.17773 13.5781H8.17969C11.318 13.5781 13.8735 11.0248 13.875 7.88672C13.8756 6.36593 13.2832 4.93519 12.208 3.85938C11.2002 2.85103 9.88078 2.26696 8.46484 2.19727L8.17969 2.19043Z"
+                    fill="#FE8400"
+                  />
+                </svg>
+              </div>
+              <div className="w-5 h-5 text-carent-orange cursor-pointer">
+                <svg viewBox="0 0 16 16" fill="currentColor">
+                  <path
+                    d="M12.9131 4.52148C13.081 3.8482 12.6567 3.54259 12.2168 3.74219L2.58398 7.45703C1.92662 7.72078 1.93037 8.08743 2.46387 8.25098L4.86621 9.00098L5.78613 11.8193C5.89783 12.1277 5.84237 12.2499 6.16602 12.25C6.41597 12.25 6.5268 12.136 6.66602 12C6.75454 11.9134 7.28033 11.4026 7.86719 10.832L10.3662 12.6787C10.8261 12.9324 11.158 12.8003 11.2725 12.251L12.9131 4.52148Z"
+                    fill="#FE8400"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </section>
