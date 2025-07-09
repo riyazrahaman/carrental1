@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        montserrat: ["Montserrat", "system-ui", "sans-serif"],
+        poppins: ["Poppins", "system-ui", "sans-serif"],
+        "arial-black": ["Arial Black", "Arial", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -46,6 +51,15 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        // Car rental brand colors
+        carent: {
+          orange: "#FE8400",
+          dark: "#141414",
+          light: "#FBFBFB",
+          cream: "#FFE4C6",
+          gray: "#575757",
+          "gray-light": "#C4C4C4",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
