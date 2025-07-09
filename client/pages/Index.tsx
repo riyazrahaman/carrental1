@@ -510,7 +510,10 @@ export default function Index() {
                       $200
                     </p>
                   </div>
-                  <button className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity">
+                  <button
+                    onClick={() => sendCarBookingToWhatsApp("Jeep XD")}
+                    className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity"
+                  >
                     Book Now
                   </button>
                 </div>
@@ -551,7 +554,10 @@ export default function Index() {
                       $340
                     </p>
                   </div>
-                  <button className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity">
+                  <button
+                    onClick={() => sendCarBookingToWhatsApp("Ferrari Enzo")}
+                    className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity"
+                  >
                     Book Now
                   </button>
                 </div>
@@ -592,7 +598,10 @@ export default function Index() {
                       $167
                     </p>
                   </div>
-                  <button className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity">
+                  <button
+                    onClick={() => sendCarBookingToWhatsApp("Fiat Cope'")}
+                    className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity"
+                  >
                     Book Now
                   </button>
                 </div>
@@ -633,7 +642,10 @@ export default function Index() {
                       $450
                     </p>
                   </div>
-                  <button className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity">
+                  <button
+                    onClick={() => sendCarBookingToWhatsApp("Porsche 911")}
+                    className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity"
+                  >
                     Book Now
                   </button>
                 </div>
@@ -674,7 +686,10 @@ export default function Index() {
                       $280
                     </p>
                   </div>
-                  <button className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity">
+                  <button
+                    onClick={() => sendCarBookingToWhatsApp("BMW X5")}
+                    className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity"
+                  >
                     Book Now
                   </button>
                 </div>
@@ -715,7 +730,10 @@ export default function Index() {
                       $220
                     </p>
                   </div>
-                  <button className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity">
+                  <button
+                    onClick={() => sendCarBookingToWhatsApp("Audi A4")}
+                    className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity"
+                  >
                     Book Now
                   </button>
                 </div>
