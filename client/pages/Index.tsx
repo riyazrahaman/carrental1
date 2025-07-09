@@ -86,8 +86,8 @@ export default function Index() {
       <nav className="relative z-50 px-4 lg:px-40 py-8">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           {/* Logo */}
-          <div className="text-carent-orange font-arial-black text-2xl font-black">
-            CARENT
+          <div className="text-carent-orange font-arial-black text-lg font-black">
+            PURI TOURS AND TRAVELS
           </div>
 
           {/* Desktop Menu */}
@@ -293,7 +293,7 @@ export default function Index() {
       </div>
 
       {/* About Us Section */}
-      <section id="about" className="py-20 px-4 lg:px-20 relative z-10">
+      <section id="about" className="py-20 px-4 lg:px-20 relative z-10 mt-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-carent-dark font-montserrat text-3xl mb-2">
@@ -764,8 +764,8 @@ export default function Index() {
               </h2>
               <div className="w-80 h-0.5 bg-carent-orange mx-auto mb-6"></div>
               <p className="text-white text-opacity-85 font-poppins text-lg max-w-md mx-auto">
-                Carent is a reputable car rental company that offers a wide
-                range of useful services for every taste.
+                Puri Tours and Travels is a reputable car rental company that
+                offers a wide range of useful services for every taste.
               </p>
             </div>
 
@@ -845,9 +845,9 @@ export default function Index() {
                   Kristin Watson
                 </h4>
                 <p className="text-carent-gray font-poppins text-lg leading-relaxed">
-                  I rented a car for a one-week trip from Carnet on the
-                  recommendation of my friend. Actually, I am satisfied with
-                  them.
+                  I rented a car for a one-week trip from Puri Tours and Travels
+                  on the recommendation of my friend. Actually, I am satisfied
+                  with them.
                 </p>
               </div>
 
@@ -862,8 +862,8 @@ export default function Index() {
                   Robert Fox
                 </h4>
                 <p className="text-carent-gray font-poppins text-lg leading-relaxed">
-                  During my last trip, I used a Carent sport car . The car was
-                  completely clean and had enough gas.
+                  During my last trip, I used a Puri Tours and Travels sport car
+                  . The car was completely clean and had enough gas.
                 </p>
               </div>
             </div>
@@ -959,67 +959,72 @@ export default function Index() {
       {/* Footer */}
       <footer className="bg-carent-dark py-10 px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-5">
+          <div className="flex flex-col items-center text-center gap-5">
             <p className="text-white font-poppins text-base">
-              Need help renting a car? Please call +91-9494-222-882
+              Need help renting a car?
             </p>
-            <div className="text-carent-orange font-arial-black text-2xl font-black">
-              CARENT
-            </div>
-            <div className="flex gap-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-5 h-5 text-carent-orange cursor-pointer hover:opacity-80 transition-opacity"
-              >
-                <svg viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M10.6338 0C12.5316 2.48539e-09 13.4807 -0.000146601 14.2031 0.375C14.8119 0.691252 15.3087 1.18806 15.625 1.79688C16.0001 2.51925 16 3.4684 16 5.36621V10.6338C16 12.5316 16.0001 13.4807 15.625 14.2031C15.3087 14.8119 14.8119 15.3087 14.2031 15.625C13.4807 16.0001 12.5316 16 10.6338 16H9.33398V10.2227H11.1113L11.4668 8H9.33398V6.44434C9.334 5.82225 9.55586 5.33316 10.5332 5.33301H11.5557V3.28906C10.978 3.20019 10.356 3.11135 9.77832 3.11133C7.9561 3.11133 6.66699 4.22266 6.66699 6.22266V8H4.66699V10.2227H6.66699V16H5.36621C3.4684 16 2.51925 16.0001 1.79688 15.625C1.18806 15.3087 0.691252 14.8119 0.375 14.2031C-0.000146601 13.4807 2.48539e-09 12.5316 0 10.6338V5.36621C2.49042e-09 3.4684 -0.000146895 2.51925 0.375 1.79688C0.691252 1.18806 1.18806 0.691252 1.79688 0.375C2.51925 -0.000146895 3.4684 2.49042e-09 5.36621 0H10.6338Z" />
-                </svg>
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-5 h-5 text-carent-orange cursor-pointer hover:opacity-80 transition-opacity"
-              >
-                <svg viewBox="0 0 16 16" fill="currentColor">
-                  <path
-                    d="M7.99902 2.18164C6.4203 2.18164 6.22169 2.18858 5.60156 2.2168C4.98237 2.24515 4.5593 2.34349 4.18945 2.4873C3.8068 2.63591 3.48159 2.83469 3.1582 3.1582C2.83475 3.48145 2.63636 3.80614 2.4873 4.18848C2.34309 4.55847 2.2447 4.98162 2.2168 5.60059C2.18904 6.22118 2.18164 6.41994 2.18164 8C2.18164 9.58008 2.18868 9.77787 2.2168 10.3984C2.24528 11.0178 2.34355 11.4406 2.4873 11.8105C2.636 12.1931 2.83481 12.5175 3.1582 12.8408C3.48147 13.1645 3.80606 13.3641 4.18848 13.5127C4.55861 13.6566 4.98142 13.7548 5.60059 13.7832C6.22112 13.8114 6.41942 13.8184 7.99902 13.8184C9.57886 13.8184 9.7772 13.8114 10.3975 13.7832C11.0168 13.7548 11.4404 13.6566 11.8105 13.5127C12.1931 13.3641 12.5176 13.1645 12.8408 12.8408C13.1642 12.5175 13.3627 12.193 13.5117 11.8105C13.6547 11.4405 13.7531 11.0176 13.7822 10.3984C13.8101 9.77796 13.8174 9.57998 13.8174 8C13.8174 6.41994 13.8101 6.22118 13.7822 5.60059C13.7531 4.98144 13.6547 4.55833 13.5117 4.18848C13.3627 3.80607 13.1643 3.48142 12.8408 3.1582C12.5172 2.83462 12.1935 2.63578 11.8105 2.4873C11.4397 2.34346 11.0166 2.24519 10.3975 2.2168C9.77697 2.18856 9.57893 2.18164 7.99902 2.18164Z"
-                    fill="#FE8400"
-                  />
-                </svg>
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-5 h-5 text-carent-orange cursor-pointer hover:opacity-80 transition-opacity"
-              >
-                <svg viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                </svg>
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-5 h-5 text-carent-orange cursor-pointer hover:opacity-80 transition-opacity"
-              >
-                <svg viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
-                </svg>
-              </a>
-              <a
-                href="https://wa.me/919494222882"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-5 h-5 text-carent-orange cursor-pointer hover:opacity-80 transition-opacity"
-              >
-                <svg viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.644-.182-.067-.315-.099-.445.099-.133.197-.513.644-.627.777-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.067-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.336-.445-.342-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.708 1.922.806 2.054.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.480 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
-                </svg>
-              </a>
+            <div className="flex flex-col lg:flex-row justify-between items-center w-full lg:w-auto gap-5">
+              <p className="text-white font-poppins text-base">
+                Please call +91-9494-222-882
+              </p>
+              <div className="text-carent-orange font-arial-black text-lg font-black">
+                PURI TOURS AND TRAVELS
+              </div>
+              <div className="flex gap-4">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-5 h-5 text-carent-orange cursor-pointer hover:opacity-80 transition-opacity"
+                >
+                  <svg viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M10.6338 0C12.5316 2.48539e-09 13.4807 -0.000146601 14.2031 0.375C14.8119 0.691252 15.3087 1.18806 15.625 1.79688C16.0001 2.51925 16 3.4684 16 5.36621V10.6338C16 12.5316 16.0001 13.4807 15.625 14.2031C15.3087 14.8119 14.8119 15.3087 14.2031 15.625C13.4807 16.0001 12.5316 16 10.6338 16H9.33398V10.2227H11.1113L11.4668 8H9.33398V6.44434C9.334 5.82225 9.55586 5.33316 10.5332 5.33301H11.5557V3.28906C10.978 3.20019 10.356 3.11135 9.77832 3.11133C7.9561 3.11133 6.66699 4.22266 6.66699 6.22266V8H4.66699V10.2227H6.66699V16H5.36621C3.4684 16 2.51925 16.0001 1.79688 15.625C1.18806 15.3087 0.691252 14.8119 0.375 14.2031C-0.000146601 13.4807 2.48539e-09 12.5316 0 10.6338V5.36621C2.49042e-09 3.4684 -0.000146895 2.51925 0.375 1.79688C0.691252 1.18806 1.18806 0.691252 1.79688 0.375C2.51925 -0.000146895 3.4684 2.49042e-09 5.36621 0H10.6338Z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-5 h-5 text-carent-orange cursor-pointer hover:opacity-80 transition-opacity"
+                >
+                  <svg viewBox="0 0 16 16" fill="currentColor">
+                    <path
+                      d="M7.99902 2.18164C6.4203 2.18164 6.22169 2.18858 5.60156 2.2168C4.98237 2.24515 4.5593 2.34349 4.18945 2.4873C3.8068 2.63591 3.48159 2.83469 3.1582 3.1582C2.83475 3.48145 2.63636 3.80614 2.4873 4.18848C2.34309 4.55847 2.2447 4.98162 2.2168 5.60059C2.18904 6.22118 2.18164 6.41994 2.18164 8C2.18164 9.58008 2.18868 9.77787 2.2168 10.3984C2.24528 11.0178 2.34355 11.4406 2.4873 11.8105C2.636 12.1931 2.83481 12.5175 3.1582 12.8408C3.48147 13.1645 3.80606 13.3641 4.18848 13.5127C4.55861 13.6566 4.98142 13.7548 5.60059 13.7832C6.22112 13.8114 6.41942 13.8184 7.99902 13.8184C9.57886 13.8184 9.7772 13.8114 10.3975 13.7832C11.0168 13.7548 11.4404 13.6566 11.8105 13.5127C12.1931 13.3641 12.5176 13.1645 12.8408 12.8408C13.1642 12.5175 13.3627 12.193 13.5117 11.8105C13.6547 11.4405 13.7531 11.0176 13.7822 10.3984C13.8101 9.77796 13.8174 9.57998 13.8174 8C13.8174 6.41994 13.8101 6.22118 13.7822 5.60059C13.7531 4.98144 13.6547 4.55833 13.5117 4.18848C13.3627 3.80607 13.1643 3.48142 12.8408 3.1582C12.5172 2.83462 12.1935 2.63578 11.8105 2.4873C11.4397 2.34346 11.0166 2.24519 10.3975 2.2168C9.77697 2.18856 9.57893 2.18164 7.99902 2.18164Z"
+                      fill="#FE8400"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-5 h-5 text-carent-orange cursor-pointer hover:opacity-80 transition-opacity"
+                >
+                  <svg viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-5 h-5 text-carent-orange cursor-pointer hover:opacity-80 transition-opacity"
+                >
+                  <svg viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://wa.me/919494222882"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-5 h-5 text-carent-orange cursor-pointer hover:opacity-80 transition-opacity"
+                >
+                  <svg viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.644-.182-.067-.315-.099-.445.099-.133.197-.513.644-.627.777-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.067-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.336-.445-.342-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.708 1.922.806 2.054.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.480 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
