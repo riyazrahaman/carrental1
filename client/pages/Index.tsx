@@ -215,18 +215,18 @@ export default function Index() {
           <div className="w-44 h-0.5 bg-carent-orange mx-auto"></div>
         </div>
 
-        <div className="bg-carent-cream py-10 px-4 lg:px-10">
+        <div className="bg-carent-cream py-8 lg:py-10 px-4 lg:px-10">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 items-end">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 lg:gap-6 items-end">
               {/* Pickup Location */}
-              <div className="bg-white rounded p-4 flex items-center justify-between h-15">
-                <div className="flex items-center gap-2">
-                  <MapPin className="text-gray-600" size={20} />
-                  <span className="text-carent-dark font-poppins">
+              <div className="bg-white rounded p-3 lg:p-4 flex items-center justify-between h-12 lg:h-15">
+                <div className="flex items-center gap-1 lg:gap-2">
+                  <MapPin className="text-gray-600" size={18} />
+                  <span className="text-carent-dark font-poppins text-sm lg:text-base">
                     Pickup Location
                   </span>
                 </div>
-                <ChevronDown className="text-gray-600" size={20} />
+                <ChevronDown className="text-gray-600" size={18} />
               </div>
 
               {/* Pickup Date */}
@@ -274,7 +274,7 @@ export default function Index() {
               </div>
 
               {/* Book Now Button */}
-              <button className="bg-carent-orange text-carent-dark px-6 py-4 rounded font-poppins text-lg hover:opacity-90 transition-opacity h-15">
+              <button className="bg-carent-orange text-carent-dark px-4 lg:px-6 py-3 lg:py-4 rounded font-poppins text-base lg:text-lg hover:opacity-90 transition-opacity h-12 lg:h-15 col-span-full xl:col-span-1">
                 Book Now
               </button>
             </div>
