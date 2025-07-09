@@ -230,47 +230,47 @@ export default function Index() {
               </div>
 
               {/* Pickup Date */}
-              <div className="bg-white rounded p-4 flex items-center justify-between h-15">
-                <div className="flex items-center gap-2">
-                  <Calendar className="text-gray-600" size={20} />
-                  <span className="text-carent-dark font-poppins">
+              <div className="bg-white rounded p-3 lg:p-4 flex items-center justify-between h-12 lg:h-15">
+                <div className="flex items-center gap-1 lg:gap-2">
+                  <Calendar className="text-gray-600" size={18} />
+                  <span className="text-carent-dark font-poppins text-sm lg:text-base">
                     Pickup Date
                   </span>
                 </div>
-                <ChevronDown className="text-gray-600" size={20} />
+                <ChevronDown className="text-gray-600" size={18} />
               </div>
 
               {/* Return Date */}
-              <div className="bg-white rounded p-4 flex items-center justify-between h-15">
-                <div className="flex items-center gap-2">
-                  <Calendar className="text-gray-600" size={20} />
-                  <span className="text-carent-dark font-poppins">
+              <div className="bg-white rounded p-3 lg:p-4 flex items-center justify-between h-12 lg:h-15">
+                <div className="flex items-center gap-1 lg:gap-2">
+                  <Calendar className="text-gray-600" size={18} />
+                  <span className="text-carent-dark font-poppins text-sm lg:text-base">
                     Return Date
                   </span>
                 </div>
-                <ChevronDown className="text-gray-600" size={20} />
+                <ChevronDown className="text-gray-600" size={18} />
               </div>
 
               {/* Car Type */}
-              <div className="bg-white rounded p-4 flex items-center justify-between h-15">
-                <div className="flex items-center gap-2">
-                  <Car className="text-gray-600" size={20} />
-                  <span className="text-carent-dark font-poppins">
+              <div className="bg-white rounded p-3 lg:p-4 flex items-center justify-between h-12 lg:h-15">
+                <div className="flex items-center gap-1 lg:gap-2">
+                  <Car className="text-gray-600" size={18} />
+                  <span className="text-carent-dark font-poppins text-sm lg:text-base">
                     Car Type
                   </span>
                 </div>
-                <ChevronDown className="text-gray-600" size={20} />
+                <ChevronDown className="text-gray-600" size={18} />
               </div>
 
               {/* Pickup Time */}
-              <div className="bg-white rounded p-4 flex items-center justify-between h-15">
-                <div className="flex items-center gap-2">
-                  <Clock className="text-gray-600" size={20} />
-                  <span className="text-carent-dark font-poppins">
+              <div className="bg-white rounded p-3 lg:p-4 flex items-center justify-between h-12 lg:h-15">
+                <div className="flex items-center gap-1 lg:gap-2">
+                  <Clock className="text-gray-600" size={18} />
+                  <span className="text-carent-dark font-poppins text-sm lg:text-base">
                     Pickup Time
                   </span>
                 </div>
-                <ChevronDown className="text-gray-600" size={20} />
+                <ChevronDown className="text-gray-600" size={18} />
               </div>
 
               {/* Book Now Button */}
