@@ -961,12 +961,9 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center text-center gap-5">
             <p className="text-white font-poppins text-base">
-              Need help renting a car?
+              Need help renting a car? Please call +91-9494-222-882
             </p>
             <div className="flex flex-col lg:flex-row justify-between items-center w-full lg:w-auto gap-5">
-              <p className="text-white font-poppins text-base">
-                Please call +91-9494-222-882
-              </p>
               <div className="text-carent-orange font-arial-black text-lg font-black">
                 PURI TOURS AND TRAVELS
               </div>
