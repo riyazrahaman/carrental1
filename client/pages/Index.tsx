@@ -17,6 +17,69 @@ import {
 export default function Index() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Form state for booking
+  const [bookingForm, setBookingForm] = useState({
+    pickupLocation: "",
+    pickupDate: "",
+    returnDate: "",
+    carType: "",
+    pickupTime: "",
+    returnTime: "",
+  });
+
+  // Scroll to section function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setMobileMenuOpen(false);
+  };
+
+  // WhatsApp booking function
+  const sendBookingToWhatsApp = () => {
+    const {
+      pickupLocation,
+      pickupDate,
+      returnDate,
+      carType,
+      pickupTime,
+      returnTime,
+    } = bookingForm;
+
+    if (
+      !pickupLocation ||
+      !pickupDate ||
+      !returnDate ||
+      !carType ||
+      !pickupTime ||
+      !returnTime
+    ) {
+      alert("Please fill in all booking details");
+      return;
+    }
+
+    const message =
+      `Hello! I would like to book a car with the following details:\n\n` +
+      `🚗 Car Type: ${carType}\n` +
+      `📍 Pickup Location: ${pickupLocation}\n` +
+      `📅 Pickup Date: ${pickupDate}\n` +
+      `🕐 Pickup Time: ${pickupTime}\n` +
+      `📅 Return Date: ${returnDate}\n` +
+      `🕐 Return Time: ${returnTime}\n\n` +
+      `Please confirm availability and pricing. Thank you!`;
+
+    const whatsappUrl = `https://wa.me/919494222882?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
+  // WhatsApp car booking function
+  const sendCarBookingToWhatsApp = (carName: string) => {
+    const message = `Hello! I want to book ${carName}. Please provide more details and pricing. Thank you!`;
+    const whatsappUrl = `https://wa.me/919494222882?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <div className="min-h-screen bg-carent-light">
       {/* Navigation Header */}
@@ -29,36 +92,36 @@ export default function Index() {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-8">
-            <a
-              href="#"
+            <button
+              onClick={() => scrollToSection("hero")}
               className="text-carent-dark font-poppins hover:text-carent-orange transition-colors"
             >
               Home
-            </a>
-            <a
-              href="#"
+            </button>
+            <button
+              onClick={() => scrollToSection("about")}
               className="text-carent-dark font-poppins hover:text-carent-orange transition-colors"
             >
               About
-            </a>
-            <a
-              href="#"
+            </button>
+            <button
+              onClick={() => scrollToSection("booking")}
               className="text-carent-dark font-poppins hover:text-carent-orange transition-colors"
             >
               Booking
-            </a>
-            <a
-              href="#"
+            </button>
+            <button
+              onClick={() => scrollToSection("cars")}
               className="text-carent-dark font-poppins hover:text-carent-orange transition-colors"
             >
               Cars
-            </a>
-            <a
-              href="#"
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
               className="text-carent-dark font-poppins hover:text-carent-orange transition-colors"
             >
               Contacts
-            </a>
+            </button>
           </div>
 
           {/* CTA Button */}
@@ -81,21 +144,36 @@ export default function Index() {
         {mobileMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t">
             <div className="flex flex-col p-4 space-y-4">
-              <a href="#" className="text-carent-dark font-poppins">
+              <button
+                onClick={() => scrollToSection("hero")}
+                className="text-carent-dark font-poppins text-left"
+              >
                 Home
-              </a>
-              <a href="#" className="text-carent-dark font-poppins">
+              </button>
+              <button
+                onClick={() => scrollToSection("about")}
+                className="text-carent-dark font-poppins text-left"
+              >
                 About
-              </a>
-              <a href="#" className="text-carent-dark font-poppins">
+              </button>
+              <button
+                onClick={() => scrollToSection("booking")}
+                className="text-carent-dark font-poppins text-left"
+              >
                 Booking
-              </a>
-              <a href="#" className="text-carent-dark font-poppins">
+              </button>
+              <button
+                onClick={() => scrollToSection("cars")}
+                className="text-carent-dark font-poppins text-left"
+              >
                 Cars
-              </a>
-              <a href="#" className="text-carent-dark font-poppins">
+              </button>
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="text-carent-dark font-poppins text-left"
+              >
                 Contacts
-              </a>
+              </button>
               <button className="bg-carent-orange text-carent-dark px-6 py-2 rounded font-poppins self-start">
                 Login | Sign up
               </button>
@@ -105,7 +183,7 @@ export default function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-[742px] overflow-hidden">
+      <section id="hero" className="relative h-[742px] overflow-hidden">
         {/* Black background that covers part of the hero */}
         <div className="absolute top-0 left-0 w-full lg:w-[613px] h-full bg-carent-dark z-10"></div>
 
@@ -215,7 +293,7 @@ export default function Index() {
       </div>
 
       {/* About Us Section */}
-      <section className="py-20 px-4 lg:px-20 relative z-10">
+      <section id="about" className="py-20 px-4 lg:px-20 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-carent-dark font-montserrat text-3xl mb-2">
@@ -245,7 +323,7 @@ export default function Index() {
       </section>
 
       {/* Book Now Section */}
-      <section className="py-20 relative z-10">
+      <section id="booking" className="py-20 relative z-10">
         <div className="text-center mb-10">
           <h2 className="text-carent-dark font-montserrat text-3xl mb-2">
             Book Now
@@ -336,7 +414,7 @@ export default function Index() {
       </section>
 
       {/* Our Featured Cars Section */}
-      <section className="py-20 px-4 lg:px-20 relative z-10">
+      <section id="cars" className="py-20 px-4 lg:px-20 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-carent-dark font-montserrat text-3xl mb-2">
@@ -761,7 +839,7 @@ export default function Index() {
       </section>
 
       {/* Contact Us Section */}
-      <section className="py-20 px-4 lg:px-20 relative z-10">
+      <section id="contact" className="py-20 px-4 lg:px-20 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-carent-dark font-montserrat text-3xl mb-2">
