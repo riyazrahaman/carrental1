@@ -336,76 +336,128 @@ export default function Index() {
             {/* First row of form fields */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 items-end mb-6">
               {/* Pickup Location */}
-              <div className="bg-white rounded p-3 lg:p-4 flex items-center justify-between h-12 lg:h-15">
-                <div className="flex items-center gap-1 lg:gap-2">
+              <div className="bg-white rounded p-3 lg:p-4 h-12 lg:h-15">
+                <div className="flex items-center gap-1 lg:gap-2 h-full">
                   <MapPin className="text-gray-600" size={18} />
-                  <span className="text-carent-dark font-poppins text-sm lg:text-base">
-                    Pickup Location
-                  </span>
+                  <input
+                    type="text"
+                    placeholder="Pickup Location"
+                    value={bookingForm.pickupLocation}
+                    onChange={(e) =>
+                      setBookingForm({
+                        ...bookingForm,
+                        pickupLocation: e.target.value,
+                      })
+                    }
+                    className="flex-1 text-carent-dark font-poppins text-sm lg:text-base bg-transparent border-none outline-none placeholder-gray-600"
+                  />
                 </div>
-                <ChevronDown className="text-gray-600" size={18} />
               </div>
 
               {/* Pickup Date */}
-              <div className="bg-white rounded p-3 lg:p-4 flex items-center justify-between h-12 lg:h-15">
-                <div className="flex items-center gap-1 lg:gap-2">
+              <div className="bg-white rounded p-3 lg:p-4 h-12 lg:h-15">
+                <div className="flex items-center gap-1 lg:gap-2 h-full">
                   <Calendar className="text-gray-600" size={18} />
-                  <span className="text-carent-dark font-poppins text-sm lg:text-base">
-                    Pickup Date
-                  </span>
+                  <input
+                    type="date"
+                    value={bookingForm.pickupDate}
+                    onChange={(e) =>
+                      setBookingForm({
+                        ...bookingForm,
+                        pickupDate: e.target.value,
+                      })
+                    }
+                    className="flex-1 text-carent-dark font-poppins text-sm lg:text-base bg-transparent border-none outline-none"
+                  />
                 </div>
-                <ChevronDown className="text-gray-600" size={18} />
               </div>
 
               {/* Return Date */}
-              <div className="bg-white rounded p-3 lg:p-4 flex items-center justify-between h-12 lg:h-15">
-                <div className="flex items-center gap-1 lg:gap-2">
+              <div className="bg-white rounded p-3 lg:p-4 h-12 lg:h-15">
+                <div className="flex items-center gap-1 lg:gap-2 h-full">
                   <Calendar className="text-gray-600" size={18} />
-                  <span className="text-carent-dark font-poppins text-sm lg:text-base">
-                    Return Date
-                  </span>
+                  <input
+                    type="date"
+                    value={bookingForm.returnDate}
+                    onChange={(e) =>
+                      setBookingForm({
+                        ...bookingForm,
+                        returnDate: e.target.value,
+                      })
+                    }
+                    className="flex-1 text-carent-dark font-poppins text-sm lg:text-base bg-transparent border-none outline-none"
+                  />
                 </div>
-                <ChevronDown className="text-gray-600" size={18} />
               </div>
             </div>
 
             {/* Second row of form fields */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-6 items-end">
               {/* Car Type */}
-              <div className="bg-white rounded p-3 lg:p-4 flex items-center justify-between h-12 lg:h-15">
-                <div className="flex items-center gap-1 lg:gap-2">
+              <div className="bg-white rounded p-3 lg:p-4 h-12 lg:h-15">
+                <div className="flex items-center gap-1 lg:gap-2 h-full">
                   <Car className="text-gray-600" size={18} />
-                  <span className="text-carent-dark font-poppins text-sm lg:text-base">
-                    Car Type
-                  </span>
+                  <select
+                    value={bookingForm.carType}
+                    onChange={(e) =>
+                      setBookingForm({
+                        ...bookingForm,
+                        carType: e.target.value,
+                      })
+                    }
+                    className="flex-1 text-carent-dark font-poppins text-sm lg:text-base bg-transparent border-none outline-none"
+                  >
+                    <option value="">Car Type</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Sports">Sports Car</option>
+                    <option value="Luxury">Luxury</option>
+                  </select>
                 </div>
-                <ChevronDown className="text-gray-600" size={18} />
               </div>
 
               {/* Pickup Time */}
-              <div className="bg-white rounded p-3 lg:p-4 flex items-center justify-between h-12 lg:h-15">
-                <div className="flex items-center gap-1 lg:gap-2">
+              <div className="bg-white rounded p-3 lg:p-4 h-12 lg:h-15">
+                <div className="flex items-center gap-1 lg:gap-2 h-full">
                   <Clock className="text-gray-600" size={18} />
-                  <span className="text-carent-dark font-poppins text-sm lg:text-base">
-                    Pickup Time
-                  </span>
+                  <input
+                    type="time"
+                    value={bookingForm.pickupTime}
+                    onChange={(e) =>
+                      setBookingForm({
+                        ...bookingForm,
+                        pickupTime: e.target.value,
+                      })
+                    }
+                    className="flex-1 text-carent-dark font-poppins text-sm lg:text-base bg-transparent border-none outline-none"
+                  />
                 </div>
-                <ChevronDown className="text-gray-600" size={18} />
               </div>
 
               {/* Return Time */}
-              <div className="bg-white rounded p-3 lg:p-4 flex items-center justify-between h-12 lg:h-15">
-                <div className="flex items-center gap-1 lg:gap-2">
+              <div className="bg-white rounded p-3 lg:p-4 h-12 lg:h-15">
+                <div className="flex items-center gap-1 lg:gap-2 h-full">
                   <Clock className="text-gray-600" size={18} />
-                  <span className="text-carent-dark font-poppins text-sm lg:text-base">
-                    Return Time
-                  </span>
+                  <input
+                    type="time"
+                    value={bookingForm.returnTime}
+                    onChange={(e) =>
+                      setBookingForm({
+                        ...bookingForm,
+                        returnTime: e.target.value,
+                      })
+                    }
+                    className="flex-1 text-carent-dark font-poppins text-sm lg:text-base bg-transparent border-none outline-none"
+                  />
                 </div>
-                <ChevronDown className="text-gray-600" size={18} />
               </div>
 
               {/* Book Now Button */}
-              <button className="bg-carent-orange text-carent-dark px-4 lg:px-6 py-3 lg:py-4 rounded font-poppins text-base lg:text-lg hover:opacity-90 transition-opacity h-12 lg:h-15">
+              <button
+                onClick={sendBookingToWhatsApp}
+                className="bg-carent-orange text-carent-dark px-4 lg:px-6 py-3 lg:py-4 rounded font-poppins text-base lg:text-lg hover:opacity-90 transition-opacity h-12 lg:h-15"
+              >
                 Book Now
               </button>
             </div>
