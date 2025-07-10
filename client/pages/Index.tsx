@@ -787,6 +787,22 @@ export default function Index() {
             </div>
           </div>
 
+          {/* Mobile Navigation Buttons - Below carousel */}
+          <div className="flex justify-between md:hidden mt-6 mb-4">
+            <button
+              onClick={prevCar}
+              className="bg-carent-orange text-carent-dark rounded-full p-3 shadow-lg hover:opacity-90 transition-opacity"
+            >
+              <ArrowLeft size={18} />
+            </button>
+            <button
+              onClick={nextCar}
+              className="bg-carent-orange text-carent-dark rounded-full p-3 shadow-lg hover:opacity-90 transition-opacity"
+            >
+              <ArrowRight size={18} />
+            </button>
+          </div>
+
           {/* Pagination Dots - Responsive */}
           <div className="flex justify-center space-x-3 mt-8">
             {/* Mobile dots - 4 dots for 4 cars */}
