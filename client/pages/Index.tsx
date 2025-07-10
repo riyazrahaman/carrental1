@@ -973,6 +973,22 @@ export default function Index() {
             </button>
           </div>
 
+          {/* Mobile Navigation Buttons - Below testimonials */}
+          <div className="flex justify-between lg:hidden mt-6 mb-4">
+            <button
+              onClick={prevTestimonial}
+              className="bg-carent-orange text-carent-dark rounded-full p-3 shadow-lg hover:opacity-90 transition-opacity"
+            >
+              <ArrowLeft size={18} />
+            </button>
+            <button
+              onClick={nextTestimonial}
+              className="bg-carent-orange text-carent-dark rounded-full p-3 shadow-lg hover:opacity-90 transition-opacity"
+            >
+              <ArrowRight size={18} />
+            </button>
+          </div>
+
           {/* Pagination Dots for Testimonials - Responsive */}
           <div className="flex justify-center space-x-3 mt-8">
             {/* Mobile dots - 4 dots for individual testimonials */}
