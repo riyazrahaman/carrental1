@@ -656,11 +656,8 @@ export default function Index() {
                         </div>
                         <div className="flex justify-between items-center">
                           <div>
-                            <p className="text-carent-gray text-sm">
-                              Best price
-                            </p>
                             <p className="text-carent-dark text-lg font-poppins font-bold">
-                              {car.price}
+                              Best price
                             </p>
                           </div>
                           <button
