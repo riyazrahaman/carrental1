@@ -676,56 +676,75 @@ export default function Index() {
 
           {/* Carousel Container */}
           <div className="relative">
-            {/* Navigation Arrows */}
+            {/* Navigation Arrows - Hidden on mobile */}
             <button
               onClick={prevCar}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 md:p-3 shadow-lg hover:bg-gray-50 transition-colors hidden md:block"
             >
-              <ArrowLeft className="text-carent-orange" size={24} />
+              <ArrowLeft className="text-carent-orange" size={20} />
             </button>
             <button
               onClick={nextCar}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 md:p-3 shadow-lg hover:bg-gray-50 transition-colors hidden md:block"
             >
-              <ArrowRight className="text-carent-orange" size={24} />
+              <ArrowRight className="text-carent-orange" size={20} />
             </button>
 
-            {/* Carousel Content - Shows 3 cars at a time */}
-            <div className="overflow-hidden mx-12">
+            {/* Mobile Navigation Buttons */}
+            <div className="flex justify-between md:hidden mb-4">
+              <button
+                onClick={prevCar}
+                className="bg-carent-orange text-carent-dark rounded-full p-3 shadow-lg hover:opacity-90 transition-opacity"
+              >
+                <ArrowLeft size={18} />
+              </button>
+              <button
+                onClick={nextCar}
+                className="bg-carent-orange text-carent-dark rounded-full p-3 shadow-lg hover:opacity-90 transition-opacity"
+              >
+                <ArrowRight size={18} />
+              </button>
+            </div>
+
+            {/* Carousel Content - Responsive */}
+            <div className="overflow-hidden mx-0 md:mx-12">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{
-                  transform: `translateX(-${currentCarIndex * (100 / 3)}%)`,
+                  transform: `translateX(-${currentCarIndex * (100 / 1)}%)`,
                 }}
               >
                 {featuredCars.map((car, index) => (
-                  <div key={car.id} className="w-1/3 flex-shrink-0 px-3">
-                    <div className="border border-carent-gray-light rounded-lg p-6 bg-white shadow-lg hover:shadow-xl transition-shadow">
+                  <div
+                    key={car.id}
+                    className="w-full md:w-1/3 flex-shrink-0 px-2 md:px-3"
+                  >
+                    <div className="border border-carent-gray-light rounded-lg p-4 md:p-6 bg-white shadow-lg hover:shadow-xl transition-shadow">
                       <img
                         src={car.image}
                         alt={car.name}
-                        className="w-full h-44 object-cover rounded-lg mb-4"
+                        className="w-full h-40 md:h-44 object-cover rounded-lg mb-4"
                       />
-                      <div className="space-y-4">
+                      <div className="space-y-3 md:space-y-4">
                         <div>
-                          <h3 className="font-poppins text-lg text-carent-dark mb-3 font-semibold">
+                          <h3 className="font-poppins text-base md:text-lg text-carent-dark mb-2 md:mb-3 font-semibold">
                             {car.name}
                           </h3>
-                          <div className="flex items-center gap-2 text-sm flex-wrap">
+                          <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm flex-wrap">
                             <div className="flex items-center gap-1">
-                              <User className="text-carent-gray" size={14} />
+                              <User className="text-carent-gray" size={12} />
                               <span className="text-carent-dark">
                                 {car.seats}
                               </span>
                             </div>
                             <div className="flex items-center gap-1">
-                              <Fuel className="text-carent-gray" size={14} />
+                              <Fuel className="text-carent-gray" size={12} />
                               <span className="text-carent-dark">
                                 {car.fuel}
                               </span>
                             </div>
                             <div className="flex items-center gap-1">
-                              <Car className="text-carent-gray" size={14} />
+                              <Car className="text-carent-gray" size={12} />
                               <span className="text-carent-dark">
                                 {car.type}
                               </span>
@@ -734,13 +753,13 @@ export default function Index() {
                         </div>
                         <div className="flex justify-between items-center">
                           <div>
-                            <p className="text-carent-dark text-lg font-poppins font-bold">
+                            <p className="text-carent-dark text-base md:text-lg font-poppins font-bold">
                               Best price
                             </p>
                           </div>
                           <button
                             onClick={() => sendCarBookingToWhatsApp(car.name)}
-                            className="bg-carent-orange text-carent-dark px-3 py-2 rounded text-sm hover:opacity-90 transition-opacity font-semibold"
+                            className="bg-carent-orange text-carent-dark px-2 md:px-3 py-1.5 md:py-2 rounded text-xs md:text-sm hover:opacity-90 transition-opacity font-semibold"
                           >
                             Book Now
                           </button>
