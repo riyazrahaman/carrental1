@@ -81,15 +81,14 @@ export default function Index() {
     setMobileMenuOpen(false);
   };
 
-  // Carousel navigation functions
+  // Carousel navigation functions - for 3 cars visible with 4th car accessible
   const nextCar = () => {
-    setCurrentCarIndex((prev) => (prev + 1) % featuredCars.length);
+    // Only 2 positions: 0 (showing cars 1,2,3) and 1 (showing cars 2,3,4)
+    setCurrentCarIndex((prev) => (prev + 1) % 2);
   };
 
   const prevCar = () => {
-    setCurrentCarIndex(
-      (prev) => (prev - 1 + featuredCars.length) % featuredCars.length,
-    );
+    setCurrentCarIndex((prev) => (prev - 1 + 2) % 2);
   };
 
   const goToSlide = (index: number) => {
