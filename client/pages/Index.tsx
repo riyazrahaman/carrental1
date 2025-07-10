@@ -597,103 +597,145 @@ export default function Index() {
             <div className="w-72 h-0.5 bg-carent-orange mx-auto"></div>
           </div>
 
-          {/* Carousel Container */}
-          <div className="relative">
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevCar}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
-            >
-              <ArrowLeft className="text-carent-orange" size={24} />
-            </button>
-            <button
-              onClick={nextCar}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
-            >
-              <ArrowRight className="text-carent-orange" size={24} />
-            </button>
-
-            {/* Carousel Content */}
-            <div className="overflow-hidden mx-12">
+          {/* First 3 Cars in Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {featuredCars.slice(0, 3).map((car) => (
               <div
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentCarIndex * 100}%)` }}
+                key={car.id}
+                className="border border-carent-gray-light rounded-lg p-6 bg-white shadow-lg hover:shadow-xl transition-shadow"
               >
-                {featuredCars.map((car, index) => (
-                  <div key={car.id} className="w-full flex-shrink-0 px-4">
-                    <div className="flex flex-col lg:flex-row gap-8 items-center max-w-4xl mx-auto">
-                      {/* Car Image */}
-                      <div className="lg:w-1/2">
-                        <img
-                          src={car.image}
-                          alt={car.name}
-                          className="w-full h-64 lg:h-80 object-cover rounded-lg shadow-lg"
-                        />
+                <img
+                  src={car.image}
+                  alt={car.name}
+                  className="w-full h-44 object-cover rounded-lg mb-4"
+                />
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="font-poppins text-lg text-carent-dark mb-3 font-semibold">
+                      {car.name}
+                    </h3>
+                    <div className="flex items-center gap-4 text-sm">
+                      <div className="flex items-center gap-1">
+                        <User className="text-carent-gray" size={16} />
+                        <span className="text-carent-dark">{car.seats}</span>
                       </div>
-
-                      {/* Car Details */}
-                      <div className="lg:w-1/2 space-y-6">
-                        <div>
-                          <h3 className="font-montserrat text-2xl lg:text-3xl text-carent-dark mb-4 font-bold">
-                            {car.name}
-                          </h3>
-                          <div className="flex flex-wrap items-center gap-6 text-lg">
-                            <div className="flex items-center gap-2">
-                              <User className="text-carent-gray" size={20} />
-                              <span className="text-carent-dark">
-                                {car.seats} Seats
-                              </span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <Fuel className="text-carent-gray" size={20} />
-                              <span className="text-carent-dark">
-                                {car.fuel}
-                              </span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <Car className="text-carent-gray" size={20} />
-                              <span className="text-carent-dark">
-                                {car.type}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="space-y-4">
-                          <div>
-                            <p className="text-carent-gray text-lg">
-                              Daily rate from
-                            </p>
-                            <p className="text-carent-dark text-3xl font-montserrat font-bold">
-                              {car.price}
-                            </p>
-                          </div>
-                          <button
-                            onClick={() => sendCarBookingToWhatsApp(car.name)}
-                            className="bg-carent-orange text-carent-dark px-8 py-3 rounded-lg text-lg font-poppins hover:opacity-90 transition-opacity shadow-lg"
-                          >
-                            Book Now
-                          </button>
-                        </div>
+                      <div className="flex items-center gap-1">
+                        <Fuel className="text-carent-gray" size={16} />
+                        <span className="text-carent-dark">{car.fuel}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Car className="text-carent-gray" size={16} />
+                        <span className="text-carent-dark">{car.type}</span>
                       </div>
                     </div>
                   </div>
-                ))}
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <p className="text-carent-gray text-sm">
+                        Daily rate from
+                      </p>
+                      <p className="text-carent-dark text-lg font-poppins font-bold">
+                        {car.price}
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => sendCarBookingToWhatsApp(car.name)}
+                      className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity font-semibold"
+                    >
+                      Book Now
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
 
-          {/* Pagination Dots */}
-          <div className="flex justify-center space-x-3 mt-8">
-            {featuredCars.map((_, index) => (
+          {/* 4th Car as Featured Carousel */}
+          <div className="bg-carent-cream rounded-xl p-8 relative overflow-hidden">
+            <div className="text-center mb-8">
+              <h3 className="text-carent-dark font-montserrat text-2xl mb-2 font-bold">
+                Featured Premium Car
+              </h3>
+              <div className="w-32 h-0.5 bg-carent-orange mx-auto"></div>
+            </div>
+
+            <div className="relative max-w-5xl mx-auto">
+              {/* Navigation Arrows - Disabled for single car */}
               <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  currentCarIndex === index ? "bg-carent-orange" : "bg-gray-300"
-                }`}
-              />
-            ))}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg opacity-30 cursor-not-allowed"
+                disabled
+              >
+                <ArrowLeft className="text-gray-400" size={24} />
+              </button>
+              <button
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg opacity-30 cursor-not-allowed"
+                disabled
+              >
+                <ArrowRight className="text-gray-400" size={24} />
+              </button>
+
+              {/* Featured Car Content */}
+              <div className="px-12">
+                <div className="flex flex-col lg:flex-row gap-8 items-center">
+                  {/* Car Image */}
+                  <div className="lg:w-1/2">
+                    <img
+                      src={featuredCars[3].image}
+                      alt={featuredCars[3].name}
+                      className="w-full h-64 lg:h-80 object-cover rounded-xl shadow-lg"
+                    />
+                  </div>
+
+                  {/* Car Details */}
+                  <div className="lg:w-1/2 space-y-6">
+                    <div>
+                      <h4 className="font-montserrat text-3xl lg:text-4xl text-carent-dark mb-4 font-bold">
+                        {featuredCars[3].name}
+                      </h4>
+                      <div className="flex flex-wrap items-center gap-6 text-lg">
+                        <div className="flex items-center gap-2">
+                          <User className="text-carent-gray" size={20} />
+                          <span className="text-carent-dark">
+                            {featuredCars[3].seats} Seats
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Fuel className="text-carent-gray" size={20} />
+                          <span className="text-carent-dark">
+                            {featuredCars[3].fuel}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Car className="text-carent-gray" size={20} />
+                          <span className="text-carent-dark">
+                            {featuredCars[3].type}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div>
+                        <p className="text-carent-gray text-lg">
+                          Daily rate from
+                        </p>
+                        <p className="text-carent-dark text-4xl font-montserrat font-bold">
+                          {featuredCars[3].price}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() =>
+                          sendCarBookingToWhatsApp(featuredCars[3].name)
+                        }
+                        className="bg-carent-orange text-carent-dark px-8 py-4 rounded-lg text-xl font-poppins hover:opacity-90 transition-opacity shadow-lg font-semibold"
+                      >
+                        Book Premium Car
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
