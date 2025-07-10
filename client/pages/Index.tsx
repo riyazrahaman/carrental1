@@ -946,19 +946,37 @@ export default function Index() {
                   <input
                     type="text"
                     placeholder="Your Name"
+                    value={contactForm.name}
+                    onChange={(e) =>
+                      setContactForm({ ...contactForm, name: e.target.value })
+                    }
                     className="w-full p-3 border border-carent-gray-light rounded bg-carent-light font-poppins"
                   />
                   <input
                     type="email"
                     placeholder="Your Email"
+                    value={contactForm.email}
+                    onChange={(e) =>
+                      setContactForm({ ...contactForm, email: e.target.value })
+                    }
                     className="w-full p-3 border border-carent-gray-light rounded bg-carent-light font-poppins"
                   />
                   <textarea
                     placeholder="Your Message"
                     rows={5}
+                    value={contactForm.message}
+                    onChange={(e) =>
+                      setContactForm({
+                        ...contactForm,
+                        message: e.target.value,
+                      })
+                    }
                     className="w-full p-3 border border-carent-gray-light rounded bg-carent-light font-poppins resize-none"
                   ></textarea>
-                  <button className="bg-carent-orange text-carent-dark px-6 py-3 rounded font-poppins hover:opacity-90 transition-opacity">
+                  <button
+                    onClick={sendContactToWhatsApp}
+                    className="bg-carent-orange text-carent-dark px-6 py-3 rounded font-poppins hover:opacity-90 transition-opacity"
+                  >
                     Send A Message
                   </button>
                 </div>
