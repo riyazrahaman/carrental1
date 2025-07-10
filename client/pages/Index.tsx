@@ -657,7 +657,7 @@ export default function Index() {
                         <div className="flex justify-between items-center">
                           <div>
                             <p className="text-carent-gray text-sm">
-                              Daily rate from
+                              Best price
                             </p>
                             <p className="text-carent-dark text-lg font-poppins font-bold">
                               {car.price}
