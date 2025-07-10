@@ -16,6 +16,7 @@ import {
 
 export default function Index() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentCarIndex, setCurrentCarIndex] = useState(0);
 
   // Form state for booking
   const [bookingForm, setBookingForm] = useState({
@@ -26,6 +27,50 @@ export default function Index() {
     pickupTime: "",
     returnTime: "",
   });
+
+  // Featured cars data
+  const featuredCars = [
+    {
+      id: 1,
+      name: "Toyota Etios",
+      image:
+        "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=639&h=356&q=80",
+      seats: 5,
+      fuel: "Gasoline",
+      type: "Sedan",
+      price: "₹2,500",
+    },
+    {
+      id: 2,
+      name: "Toyota Glanza",
+      image:
+        "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=639&h=356&q=80",
+      seats: 5,
+      fuel: "Gasoline",
+      type: "Hatchback",
+      price: "₹2,200",
+    },
+    {
+      id: 3,
+      name: "Kia Carens",
+      image:
+        "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=639&h=356&q=80",
+      seats: 7,
+      fuel: "Gasoline",
+      type: "MPV",
+      price: "₹3,500",
+    },
+    {
+      id: 4,
+      name: "Swift Dzire",
+      image:
+        "https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&auto=format&fit=crop&w=639&h=356&q=80",
+      seats: 5,
+      fuel: "Gasoline",
+      type: "Sedan",
+      price: "₹2,300",
+    },
+  ];
 
   // Scroll to section function
   const scrollToSection = (sectionId: string) => {
