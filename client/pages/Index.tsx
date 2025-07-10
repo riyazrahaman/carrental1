@@ -17,6 +17,7 @@ import {
 export default function Index() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentCarIndex, setCurrentCarIndex] = useState(0);
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
 
   // Form state for booking
   const [bookingForm, setBookingForm] = useState({
@@ -26,6 +27,13 @@ export default function Index() {
     carType: "",
     pickupTime: "",
     returnTime: "",
+  });
+
+  // Contact form state
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    message: "",
   });
 
   // Featured cars data
