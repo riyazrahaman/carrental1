@@ -849,49 +849,62 @@ export default function Index() {
           </div>
 
           <div className="flex items-center justify-center gap-4 lg:gap-8">
-            <ArrowLeft
-              className="text-carent-orange cursor-pointer hidden lg:block"
-              size={32}
-            />
+            <button
+              onClick={prevTestimonial}
+              className="text-carent-orange cursor-pointer hidden lg:block hover:opacity-80 transition-opacity"
+            >
+              <ArrowLeft size={32} />
+            </button>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl w-full lg:w-auto">
-              {/* Testimonial 1 */}
-              <div className="border border-carent-gray-light rounded p-10 text-center">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/e27a57389021b76fa2a8c70ef41ccfcf959935e0?width=256"
-                  alt="Kristin Watson"
-                  className="w-32 h-32 rounded-full mx-auto mb-6 object-cover"
-                />
-                <h4 className="text-carent-dark font-montserrat text-xl mb-5">
-                  Kristin Watson
-                </h4>
-                <p className="text-carent-gray font-poppins text-lg leading-relaxed">
-                  I rented a car for a one-week trip from Puri Tours and Travels
-                  on the recommendation of my friend. Actually, I am satisfied
-                  with them.
-                </p>
-              </div>
-
-              {/* Testimonial 2 */}
-              <div className="border border-carent-gray-light rounded p-10 text-center">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/21a2d397fbf74d833772591042980cffab761b0f?width=256"
-                  alt="Robert Fox"
-                  className="w-32 h-32 rounded-full mx-auto mb-6 object-cover"
-                />
-                <h4 className="text-carent-dark font-montserrat text-xl mb-5">
-                  Robert Fox
-                </h4>
-                <p className="text-carent-gray font-poppins text-lg leading-relaxed">
-                  During my last trip, I used a Puri Tours and Travels sport car
-                  . The car was completely clean and had enough gas.
-                </p>
-              </div>
+              {/* Current Testimonials */}
+              {testimonials
+                .slice(currentTestimonialIndex, currentTestimonialIndex + 2)
+                .map((testimonial) => (
+                  <div
+                    key={testimonial.id}
+                    className="border border-carent-gray-light rounded p-10 text-center"
+                  >
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-32 h-32 rounded-full mx-auto mb-6 object-cover"
+                    />
+                    <h4 className="text-carent-dark font-montserrat text-xl mb-5">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-carent-gray font-poppins text-lg leading-relaxed">
+                      {testimonial.review}
+                    </p>
+                  </div>
+                ))}
             </div>
 
-            <ArrowRight
-              className="text-carent-orange cursor-pointer hidden lg:block"
-              size={32}
+            <button
+              onClick={nextTestimonial}
+              className="text-carent-orange cursor-pointer hidden lg:block hover:opacity-80 transition-opacity"
+            >
+              <ArrowRight size={32} />
+            </button>
+          </div>
+
+          {/* Pagination Dots for Testimonials */}
+          <div className="flex justify-center space-x-3 mt-8">
+            <button
+              onClick={() => setCurrentTestimonialIndex(0)}
+              className={`w-3 h-3 rounded-full transition-colors ${
+                currentTestimonialIndex === 0
+                  ? "bg-carent-orange"
+                  : "bg-gray-300"
+              }`}
+            />
+            <button
+              onClick={() => setCurrentTestimonialIndex(2)}
+              className={`w-3 h-3 rounded-full transition-colors ${
+                currentTestimonialIndex === 2
+                  ? "bg-carent-orange"
+                  : "bg-gray-300"
+              }`}
             />
           </div>
         </div>
