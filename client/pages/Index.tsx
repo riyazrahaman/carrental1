@@ -153,15 +153,29 @@ export default function Index() {
     setCurrentCarIndex(index);
   };
 
-  // Testimonial navigation functions
+  // Testimonial navigation functions - responsive for mobile and desktop
   const nextTestimonial = () => {
-    setCurrentTestimonialIndex((prev) => (prev + 2) % testimonials.length);
+    if (window.innerWidth < 1024) {
+      // Mobile: navigate one testimonial at a time
+      setCurrentTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+    } else {
+      // Desktop: navigate two testimonials at a time
+      setCurrentTestimonialIndex((prev) => (prev + 2) % testimonials.length);
+    }
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonialIndex(
-      (prev) => (prev - 2 + testimonials.length) % testimonials.length,
-    );
+    if (window.innerWidth < 1024) {
+      // Mobile: navigate one testimonial at a time
+      setCurrentTestimonialIndex(
+        (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+      );
+    } else {
+      // Desktop: navigate two testimonials at a time
+      setCurrentTestimonialIndex(
+        (prev) => (prev - 2 + testimonials.length) % testimonials.length,
+      );
+    }
   };
 
   // Contact form WhatsApp function
