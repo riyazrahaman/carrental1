@@ -34,7 +34,7 @@ export default function Index() {
       id: 1,
       name: "Toyota Etios",
       image:
-        "https://cdn.builder.io/api/v1/image/assets%2F366dffc22aa74658b3ec0d3a7655c090%2Fccf7e01d751840728b84282961767081?format=webp&width=800",
+        "https://cdn.builder.io/api/v1/image/assets%2F366dffc22aa74658b3ec0d3a7655c090%2F588584f8ded14eb483b87f65836ae8b2?format=webp&width=800",
       seats: 5,
       fuel: "Gasoline",
       type: "Sedan",
