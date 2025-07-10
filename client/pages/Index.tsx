@@ -139,6 +139,40 @@ export default function Index() {
     setCurrentCarIndex(index);
   };
 
+  // Testimonial navigation functions
+  const nextTestimonial = () => {
+    setCurrentTestimonialIndex((prev) => (prev + 2) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonialIndex(
+      (prev) => (prev - 2 + testimonials.length) % testimonials.length,
+    );
+  };
+
+  // Contact form WhatsApp function
+  const sendContactToWhatsApp = () => {
+    const { name, email, message } = contactForm;
+
+    if (!name || !email || !message) {
+      alert("Please fill in all contact details");
+      return;
+    }
+
+    const whatsappMessage =
+      `Hello! New contact form submission:\n\n` +
+      `👤 Name: ${name}\n` +
+      `📧 Email: ${email}\n` +
+      `💬 Message: ${message}\n\n` +
+      `Please respond to this inquiry. Thank you!`;
+
+    const whatsappUrl = `https://wa.me/919494222882?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, "_blank");
+
+    // Reset form
+    setContactForm({ name: "", email: "", message: "" });
+  };
+
   // WhatsApp booking function
   const sendBookingToWhatsApp = () => {
     const {
