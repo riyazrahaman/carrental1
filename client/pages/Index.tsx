@@ -38,17 +38,17 @@ export default function Index() {
       seats: 5,
       fuel: "Gasoline",
       type: "Sedan",
-      price: "₹2,500",
+      price: "",
     },
     {
       id: 2,
       name: "Toyota Glanza",
       image:
-        "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=639&h=356&q=80",
+        "https://cdn.builder.io/api/v1/image/assets%2F366dffc22aa74658b3ec0d3a7655c090%2Fe5384010f0fc4c52817dd6cce57f7fb1?format=webp&width=800",
       seats: 5,
       fuel: "Gasoline",
       type: "Hatchback",
-      price: "₹2,200",
+      price: "",
     },
     {
       id: 3,
@@ -58,17 +58,17 @@ export default function Index() {
       seats: 7,
       fuel: "Gasoline",
       type: "MPV",
-      price: "₹3,500",
+      price: "",
     },
     {
       id: 4,
       name: "Swift Dzire",
       image:
-        "https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&auto=format&fit=crop&w=639&h=356&q=80",
+        "https://cdn.builder.io/api/v1/image/assets%2F366dffc22aa74658b3ec0d3a7655c090%2F5cc5f67a239a4620be4bca5e3f78e48f?format=webp&width=800",
       seats: 5,
       fuel: "Gasoline",
       type: "Sedan",
-      price: "₹2,300",
+      price: "",
     },
   ];
 
