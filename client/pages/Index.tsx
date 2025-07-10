@@ -725,7 +725,10 @@ export default function Index() {
               <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{
-                  transform: `translateX(-${currentCarIndex * (100 / 1)}%)`,
+                  transform:
+                    window.innerWidth < 768
+                      ? `translateX(-${currentCarIndex * 100}%)`
+                      : `translateX(-${currentCarIndex * (100 / 3)}%)`,
                 }}
               >
                 {featuredCars.map((car, index) => (
