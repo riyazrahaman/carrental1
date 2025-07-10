@@ -902,6 +902,22 @@ export default function Index() {
             <div className="w-80 h-0.5 bg-carent-orange mx-auto"></div>
           </div>
 
+          {/* Mobile Navigation Buttons */}
+          <div className="flex justify-between lg:hidden mb-6">
+            <button
+              onClick={prevTestimonial}
+              className="bg-carent-orange text-carent-dark rounded-full p-3 shadow-lg hover:opacity-90 transition-opacity"
+            >
+              <ArrowLeft size={18} />
+            </button>
+            <button
+              onClick={nextTestimonial}
+              className="bg-carent-orange text-carent-dark rounded-full p-3 shadow-lg hover:opacity-90 transition-opacity"
+            >
+              <ArrowRight size={18} />
+            </button>
+          </div>
+
           <div className="flex items-center justify-center gap-4 lg:gap-8">
             <button
               onClick={prevTestimonial}
@@ -910,8 +926,25 @@ export default function Index() {
               <ArrowLeft size={32} />
             </button>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl w-full lg:w-auto">
-              {/* Current Testimonials */}
+            {/* Mobile Layout - 1 testimonial */}
+            <div className="lg:hidden w-full max-w-md">
+              <div className="border border-carent-gray-light rounded p-6 text-center">
+                <img
+                  src={testimonials[currentTestimonialIndex].image}
+                  alt={testimonials[currentTestimonialIndex].name}
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                />
+                <h4 className="text-carent-dark font-montserrat text-lg mb-3">
+                  {testimonials[currentTestimonialIndex].name}
+                </h4>
+                <p className="text-carent-gray font-poppins text-base leading-relaxed">
+                  {testimonials[currentTestimonialIndex].review}
+                </p>
+              </div>
+            </div>
+
+            {/* Desktop Layout - 2 testimonials */}
+            <div className="hidden lg:grid lg:grid-cols-2 gap-6 max-w-4xl w-full">
               {testimonials
                 .slice(currentTestimonialIndex, currentTestimonialIndex + 2)
                 .map((testimonial) => (
