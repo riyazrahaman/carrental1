@@ -80,6 +80,42 @@ export default function Index() {
     },
   ];
 
+  // Testimonials data
+  const testimonials = [
+    {
+      id: 1,
+      name: "Venkatesh",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80",
+      review:
+        "I rented a car for a one-week trip from Puri Tours and Travels on the recommendation of my friend. Actually, I am satisfied with them.",
+    },
+    {
+      id: 2,
+      name: "Ramu",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80",
+      review:
+        "During my last trip, I used a Puri Tours and Travels car. The car was completely clean and had enough gas.",
+    },
+    {
+      id: 3,
+      name: "Rahul",
+      image:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80",
+      review:
+        "Excellent service from Puri Tours and Travels! The booking process was smooth and the car was in perfect condition. Highly recommended for family trips.",
+    },
+    {
+      id: 4,
+      name: "Shiva",
+      image:
+        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80",
+      review:
+        "Great experience with Puri Tours and Travels. Professional staff, clean vehicles, and affordable rates. Will definitely book again for my next trip.",
+    },
+  ];
+
   // Scroll to section function
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
