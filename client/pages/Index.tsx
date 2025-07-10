@@ -916,22 +916,6 @@ export default function Index() {
             <div className="w-80 h-0.5 bg-carent-orange mx-auto"></div>
           </div>
 
-          {/* Mobile Navigation Buttons */}
-          <div className="flex justify-between lg:hidden mb-6">
-            <button
-              onClick={prevTestimonial}
-              className="bg-carent-orange text-carent-dark rounded-full p-3 shadow-lg hover:opacity-90 transition-opacity"
-            >
-              <ArrowLeft size={18} />
-            </button>
-            <button
-              onClick={nextTestimonial}
-              className="bg-carent-orange text-carent-dark rounded-full p-3 shadow-lg hover:opacity-90 transition-opacity"
-            >
-              <ArrowRight size={18} />
-            </button>
-          </div>
-
           <div className="flex items-center justify-center gap-4 lg:gap-8">
             <button
               onClick={prevTestimonial}
