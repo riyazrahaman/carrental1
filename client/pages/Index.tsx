@@ -81,6 +81,21 @@ export default function Index() {
     setMobileMenuOpen(false);
   };
 
+  // Carousel navigation functions
+  const nextCar = () => {
+    setCurrentCarIndex((prev) => (prev + 1) % featuredCars.length);
+  };
+
+  const prevCar = () => {
+    setCurrentCarIndex(
+      (prev) => (prev - 1 + featuredCars.length) % featuredCars.length,
+    );
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentCarIndex(index);
+  };
+
   // WhatsApp booking function
   const sendBookingToWhatsApp = () => {
     const {
