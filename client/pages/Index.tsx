@@ -34,7 +34,7 @@ export default function Index() {
       id: 1,
       name: "Toyota Etios",
       image:
-        "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=639&h=356&q=80",
+        "https://cdn.builder.io/api/v1/image/assets%2F366dffc22aa74658b3ec0d3a7655c090%2Fccf7e01d751840728b84282961767081?format=webp&width=800",
       seats: 5,
       fuel: "Gasoline",
       type: "Sedan",
@@ -54,7 +54,7 @@ export default function Index() {
       id: 3,
       name: "Kia Carens",
       image:
-        "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=639&h=356&q=80",
+        "https://cdn.builder.io/api/v1/image/assets%2F366dffc22aa74658b3ec0d3a7655c090%2F3084b3e50b814ab684a02b7ca70bd563?format=webp&width=800",
       seats: 7,
       fuel: "Gasoline",
       type: "MPV",
