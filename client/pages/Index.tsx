@@ -718,22 +718,6 @@ export default function Index() {
               <ArrowRight className="text-carent-orange" size={20} />
             </button>
 
-            {/* Mobile Navigation Buttons */}
-            <div className="flex justify-between md:hidden mb-4">
-              <button
-                onClick={prevCar}
-                className="bg-carent-orange text-carent-dark rounded-full p-3 shadow-lg hover:opacity-90 transition-opacity"
-              >
-                <ArrowLeft size={18} />
-              </button>
-              <button
-                onClick={nextCar}
-                className="bg-carent-orange text-carent-dark rounded-full p-3 shadow-lg hover:opacity-90 transition-opacity"
-              >
-                <ArrowRight size={18} />
-              </button>
-            </div>
-
             {/* Carousel Content - Responsive */}
             <div className="overflow-hidden mx-0 md:mx-12">
               <div
