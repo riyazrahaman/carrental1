@@ -789,20 +789,38 @@ export default function Index() {
             </div>
           </div>
 
-          {/* Pagination Dots */}
+          {/* Pagination Dots - Responsive */}
           <div className="flex justify-center space-x-3 mt-8">
-            <button
-              onClick={() => setCurrentCarIndex(0)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                currentCarIndex === 0 ? "bg-carent-orange" : "bg-gray-300"
-              }`}
-            />
-            <button
-              onClick={() => setCurrentCarIndex(1)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                currentCarIndex === 1 ? "bg-carent-orange" : "bg-gray-300"
-              }`}
-            />
+            {/* Mobile dots - 4 dots for 4 cars */}
+            <div className="flex md:hidden space-x-2">
+              {featuredCars.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentCarIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    currentCarIndex === index
+                      ? "bg-carent-orange"
+                      : "bg-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* Desktop dots - 2 dots for 2 positions */}
+            <div className="hidden md:flex space-x-3">
+              <button
+                onClick={() => setCurrentCarIndex(0)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  currentCarIndex === 0 ? "bg-carent-orange" : "bg-gray-300"
+                }`}
+              />
+              <button
+                onClick={() => setCurrentCarIndex(1)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  currentCarIndex === 1 ? "bg-carent-orange" : "bg-gray-300"
+                }`}
+              />
+            </div>
           </div>
         </div>
       </section>
