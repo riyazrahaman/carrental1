@@ -125,14 +125,28 @@ export default function Index() {
     setMobileMenuOpen(false);
   };
 
-  // Carousel navigation functions - for 3 cars visible with 4th car accessible
+  // Carousel navigation functions - responsive for mobile (1 car) and desktop (3 cars)
   const nextCar = () => {
-    // Only 2 positions: 0 (showing cars 1,2,3) and 1 (showing cars 2,3,4)
-    setCurrentCarIndex((prev) => (prev + 1) % 2);
+    // Check if it's mobile view or desktop view
+    if (window.innerWidth < 768) {
+      // Mobile: show 1 car at a time (4 positions)
+      setCurrentCarIndex((prev) => (prev + 1) % featuredCars.length);
+    } else {
+      // Desktop: show 3 cars at a time (2 positions)
+      setCurrentCarIndex((prev) => (prev + 1) % 2);
+    }
   };
 
   const prevCar = () => {
-    setCurrentCarIndex((prev) => (prev - 1 + 2) % 2);
+    if (window.innerWidth < 768) {
+      // Mobile: show 1 car at a time
+      setCurrentCarIndex(
+        (prev) => (prev - 1 + featuredCars.length) % featuredCars.length,
+      );
+    } else {
+      // Desktop: show 3 cars at a time
+      setCurrentCarIndex((prev) => (prev - 1 + 2) % 2);
+    }
   };
 
   const goToSlide = (index: number) => {
