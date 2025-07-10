@@ -597,277 +597,103 @@ export default function Index() {
             <div className="w-72 h-0.5 bg-carent-orange mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {/* Car Card 1 */}
-            <div className="border border-carent-gray-light rounded p-6 bg-white">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/257c29ce5b436c9ed822785adde4dac97f63314b?width=639"
-                alt="Jeep XD"
-                className="w-full h-44 object-cover rounded mb-3"
-              />
-              <div className="space-y-10">
-                <div>
-                  <h3 className="font-poppins text-lg text-carent-dark mb-3">
-                    Jeep XD
-                  </h3>
-                  <div className="flex items-center gap-4 text-sm">
-                    <div className="flex items-center gap-1">
-                      <User className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">5</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Fuel className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">Gasoline</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Car className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">SUV</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-carent-gray text-sm">Daily rate from</p>
-                    <p className="text-carent-dark text-lg font-poppins">
-                      $200
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => sendCarBookingToWhatsApp("Jeep XD")}
-                    className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity"
-                  >
-                    Book Now
-                  </button>
-                </div>
-              </div>
-            </div>
+          {/* Carousel Container */}
+          <div className="relative">
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevCar}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+            >
+              <ArrowLeft className="text-carent-orange" size={24} />
+            </button>
+            <button
+              onClick={nextCar}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+            >
+              <ArrowRight className="text-carent-orange" size={24} />
+            </button>
 
-            {/* Car Card 2 */}
-            <div className="border border-carent-gray-light rounded p-6 bg-white">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad335f4c50a0975635eddc3d73b3aa1d9cbce3c3?width=639"
-                alt="Ferrari Enzo"
-                className="w-full h-44 object-cover rounded mb-3"
-              />
-              <div className="space-y-10">
-                <div>
-                  <h3 className="font-poppins text-lg text-carent-dark mb-3">
-                    Ferrari Enzo
-                  </h3>
-                  <div className="flex items-center gap-4 text-sm">
-                    <div className="flex items-center gap-1">
-                      <User className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">2</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Fuel className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">Electric</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Car className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">Sedan</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-carent-gray text-sm">Daily rate from</p>
-                    <p className="text-carent-dark text-lg font-poppins">
-                      $340
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => sendCarBookingToWhatsApp("Ferrari Enzo")}
-                    className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity"
-                  >
-                    Book Now
-                  </button>
-                </div>
-              </div>
-            </div>
+            {/* Carousel Content */}
+            <div className="overflow-hidden mx-12">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentCarIndex * 100}%)` }}
+              >
+                {featuredCars.map((car, index) => (
+                  <div key={car.id} className="w-full flex-shrink-0 px-4">
+                    <div className="flex flex-col lg:flex-row gap-8 items-center max-w-4xl mx-auto">
+                      {/* Car Image */}
+                      <div className="lg:w-1/2">
+                        <img
+                          src={car.image}
+                          alt={car.name}
+                          className="w-full h-64 lg:h-80 object-cover rounded-lg shadow-lg"
+                        />
+                      </div>
 
-            {/* Car Card 3 */}
-            <div className="border border-carent-gray-light rounded p-6 bg-white">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/66e57bc69f9c1b439b512aa2dd799fa25a87ef17?width=639"
-                alt="Fiat Cope'"
-                className="w-full h-44 object-cover rounded mb-3"
-              />
-              <div className="space-y-10">
-                <div>
-                  <h3 className="font-poppins text-lg text-carent-dark mb-3">
-                    Fiat Cope'
-                  </h3>
-                  <div className="flex items-center gap-4 text-sm">
-                    <div className="flex items-center gap-1">
-                      <User className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">4</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Fuel className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">Gasoline</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Car className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">Mini coupe</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-carent-gray text-sm">Daily rate from</p>
-                    <p className="text-carent-dark text-lg font-poppins">
-                      $167
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => sendCarBookingToWhatsApp("Fiat Cope'")}
-                    className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity"
-                  >
-                    Book Now
-                  </button>
-                </div>
-              </div>
-            </div>
+                      {/* Car Details */}
+                      <div className="lg:w-1/2 space-y-6">
+                        <div>
+                          <h3 className="font-montserrat text-2xl lg:text-3xl text-carent-dark mb-4 font-bold">
+                            {car.name}
+                          </h3>
+                          <div className="flex flex-wrap items-center gap-6 text-lg">
+                            <div className="flex items-center gap-2">
+                              <User className="text-carent-gray" size={20} />
+                              <span className="text-carent-dark">
+                                {car.seats} Seats
+                              </span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Fuel className="text-carent-gray" size={20} />
+                              <span className="text-carent-dark">
+                                {car.fuel}
+                              </span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Car className="text-carent-gray" size={20} />
+                              <span className="text-carent-dark">
+                                {car.type}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
 
-            {/* Car Card 4 - Additional cars */}
-            <div className="border border-carent-gray-light rounded p-6 bg-white">
-              <img
-                src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&auto=format&fit=crop&w=639&h=356&q=80"
-                alt="Porsche 911"
-                className="w-full h-44 object-cover rounded mb-3"
-              />
-              <div className="space-y-10">
-                <div>
-                  <h3 className="font-poppins text-lg text-carent-dark mb-3">
-                    Porsche 911
-                  </h3>
-                  <div className="flex items-center gap-4 text-sm">
-                    <div className="flex items-center gap-1">
-                      <User className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">2</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Fuel className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">Gasoline</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Car className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">Sports</span>
+                        <div className="space-y-4">
+                          <div>
+                            <p className="text-carent-gray text-lg">
+                              Daily rate from
+                            </p>
+                            <p className="text-carent-dark text-3xl font-montserrat font-bold">
+                              {car.price}
+                            </p>
+                          </div>
+                          <button
+                            onClick={() => sendCarBookingToWhatsApp(car.name)}
+                            className="bg-carent-orange text-carent-dark px-8 py-3 rounded-lg text-lg font-poppins hover:opacity-90 transition-opacity shadow-lg"
+                          >
+                            Book Now
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-carent-gray text-sm">Daily rate from</p>
-                    <p className="text-carent-dark text-lg font-poppins">
-                      $450
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => sendCarBookingToWhatsApp("Porsche 911")}
-                    className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity"
-                  >
-                    Book Now
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Car Card 5 */}
-            <div className="border border-carent-gray-light rounded p-6 bg-white">
-              <img
-                src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=639&h=356&q=80"
-                alt="BMW X5"
-                className="w-full h-44 object-cover rounded mb-3"
-              />
-              <div className="space-y-10">
-                <div>
-                  <h3 className="font-poppins text-lg text-carent-dark mb-3">
-                    BMW X5
-                  </h3>
-                  <div className="flex items-center gap-4 text-sm">
-                    <div className="flex items-center gap-1">
-                      <User className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">7</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Fuel className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">Hybrid</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Car className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">SUV</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-carent-gray text-sm">Daily rate from</p>
-                    <p className="text-carent-dark text-lg font-poppins">
-                      $280
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => sendCarBookingToWhatsApp("BMW X5")}
-                    className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity"
-                  >
-                    Book Now
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Car Card 6 */}
-            <div className="border border-carent-gray-light rounded p-6 bg-white">
-              <img
-                src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=639&h=356&q=80"
-                alt="Audi A4"
-                className="w-full h-44 object-cover rounded mb-3"
-              />
-              <div className="space-y-10">
-                <div>
-                  <h3 className="font-poppins text-lg text-carent-dark mb-3">
-                    Audi A4
-                  </h3>
-                  <div className="flex items-center gap-4 text-sm">
-                    <div className="flex items-center gap-1">
-                      <User className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">5</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Fuel className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">Gasoline</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Car className="text-carent-gray" size={16} />
-                      <span className="text-carent-dark">Sedan</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-carent-gray text-sm">Daily rate from</p>
-                    <p className="text-carent-dark text-lg font-poppins">
-                      $220
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => sendCarBookingToWhatsApp("Audi A4")}
-                    className="bg-carent-orange text-carent-dark px-4 py-2 rounded text-sm hover:opacity-90 transition-opacity"
-                  >
-                    Book Now
-                  </button>
-                </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Pagination dots */}
-          <div className="flex justify-center space-x-6">
-            <div className="w-4 h-4 bg-carent-orange rounded-full"></div>
-            <div className="w-4 h-4 bg-gray-300 rounded-full"></div>
-            <div className="w-4 h-4 bg-gray-300 rounded-full"></div>
+          {/* Pagination Dots */}
+          <div className="flex justify-center space-x-3 mt-8">
+            {featuredCars.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  currentCarIndex === index ? "bg-carent-orange" : "bg-gray-300"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </section>
