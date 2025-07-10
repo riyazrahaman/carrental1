@@ -989,24 +989,42 @@ export default function Index() {
             </button>
           </div>
 
-          {/* Pagination Dots for Testimonials */}
+          {/* Pagination Dots for Testimonials - Responsive */}
           <div className="flex justify-center space-x-3 mt-8">
-            <button
-              onClick={() => setCurrentTestimonialIndex(0)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                currentTestimonialIndex === 0
-                  ? "bg-carent-orange"
-                  : "bg-gray-300"
-              }`}
-            />
-            <button
-              onClick={() => setCurrentTestimonialIndex(2)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                currentTestimonialIndex === 2
-                  ? "bg-carent-orange"
-                  : "bg-gray-300"
-              }`}
-            />
+            {/* Mobile dots - 4 dots for individual testimonials */}
+            <div className="flex lg:hidden space-x-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonialIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    currentTestimonialIndex === index
+                      ? "bg-carent-orange"
+                      : "bg-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* Desktop dots - 2 dots for pairs of testimonials */}
+            <div className="hidden lg:flex space-x-3">
+              <button
+                onClick={() => setCurrentTestimonialIndex(0)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  currentTestimonialIndex === 0
+                    ? "bg-carent-orange"
+                    : "bg-gray-300"
+                }`}
+              />
+              <button
+                onClick={() => setCurrentTestimonialIndex(2)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  currentTestimonialIndex === 2
+                    ? "bg-carent-orange"
+                    : "bg-gray-300"
+                }`}
+              />
+            </div>
           </div>
         </div>
       </section>
